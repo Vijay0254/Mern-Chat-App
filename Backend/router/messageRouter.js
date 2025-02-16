@@ -1,7 +1,7 @@
 import express from 'express'
-import { getMessageController, getUsersController, sendMessageController } from '../controller/messageController'
-import verifyToken from '../middleware/verifyToken'
-import upload from '../utils/multer'
+import { getMessageController, getUsersController, sendMessageController } from '../controller/messageController.js'
+import verifyToken from '../middleware/verifyToken.js'
+import upload from '../utils/multer.js'
 
 const router = express.Router()
 

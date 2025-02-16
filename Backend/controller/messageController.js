@@ -1,7 +1,7 @@
-import MessageModel from "../models/MessageModel"
-import UserModel from "../models/UserModel"
+import MessageModel from "../models/MessageModel.js"
+import UserModel from "../models/UserModel.js"
 import cloudinary from'cloudinary'
-import { getReceiverSocketId, io } from "../utils/socket"
+import { getReceiverSocketId, io } from "../utils/socket.js"
 
 export const getMessageController = async(req, res) =>{
     try{

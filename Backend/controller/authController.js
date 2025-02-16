@@ -1,6 +1,6 @@
-import UserModel from "../models/UserModel"
+import UserModel from "../models/UserModel.js"
 import bcrypt from'bcrypt'
-import jwtToken from'../utils/jwtToken'
+import jwtToken from'../utils/jwtToken.js'
 import cloudinary from'cloudinary'
 import validator from'validator'
 

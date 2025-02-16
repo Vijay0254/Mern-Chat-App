@@ -1,7 +1,7 @@
 import express from 'express'
-import { signupController, loginController, logoutController, verifyTokenController, updateProfileController } from '../controller/authController'
-import verifyToken from '../middleware/verifyToken'
-import upload from '../utils/multer'
+import { signupController, loginController, logoutController, verifyTokenController, updateProfileController } from '../controller/authController.js'
+import verifyToken from '../middleware/verifyToken.js'
+import upload from '../utils/multer.js'
 const router = express.Router()
 
 router.post('/signup', signupController)

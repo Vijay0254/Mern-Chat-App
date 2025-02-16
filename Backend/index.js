@@ -1,5 +1,5 @@
 import express from "express";
-import { server, app } from './utils/socket'
+import { server, app } from './utils/socket.js'
 
 import dotenv from 'dotenv'
 import cors from 'cors'
@@ -8,10 +8,10 @@ import cookieParser from 'cookie-parser'
 import path from "path"
 
 //Path of Router, Database and Cloudinary
-import connectDb from './db/connectDb'
-import connectCloudinary from './utils/cloudinary'
-import authRouter from './router/authRouter'
-import messageRouter from './router/messageRouter'
+import connectDb from './db/connectDb.js'
+import connectCloudinary from './utils/cloudinary.js'
+import authRouter from './router/authRouter.js'
+import messageRouter from './router/messageRouter.js'
 
 dotenv.config()
 const PORT = process.env.PORT
