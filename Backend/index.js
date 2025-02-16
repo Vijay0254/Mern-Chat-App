@@ -1,21 +1,21 @@
 import express from "express";
-// const app = express()
-const { server, app } = require('./utils/socket')
+import { server, app } from './utils/socket'
 
-const dotenv = require('dotenv')
-dotenv.config()
-const PORT = process.env.PORT
-const cors = require('cors')
-const cookieParser = require('cookie-parser')
+import dotenv from 'dotenv'
+import cors from 'cors'
+import cookieParser from 'cookie-parser'
 
-const path = require("path")
-const __dirname = path.resolve()
+import path from "path"
 
 //Path of Router, Database and Cloudinary
-const connectDb = require('./db/connectDb')
-const connectCloudinary = require('./utils/cloudinary')
-const authRouter = require('./router/authRouter')
-const messageRouter = require('./router/messageRouter')
+import connectDb from './db/connectDb'
+import connectCloudinary from './utils/cloudinary'
+import authRouter from './router/authRouter'
+import messageRouter from './router/messageRouter'
+
+dotenv.config()
+const PORT = process.env.PORT
+const __dirname = path.resolve()
 
 //Middleware
 app.use(cors({

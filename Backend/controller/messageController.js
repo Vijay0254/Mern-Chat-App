@@ -1,9 +1,9 @@
-const MessageModel = require("../models/MessageModel")
-const UserModel = require("../models/UserModel")
-const cloudinary = require('cloudinary')
-const { getReceiverSocketId, io } = require("../utils/socket")
+import MessageModel from "../models/MessageModel"
+import UserModel from "../models/UserModel"
+import cloudinary from'cloudinary'
+import { getReceiverSocketId, io } from "../utils/socket"
 
-const getMessageController = async(req, res) =>{
+export const getMessageController = async(req, res) =>{
     try{
         const userToChatId = req.params.id
         const senderId = req.user._id
@@ -21,7 +21,7 @@ const getMessageController = async(req, res) =>{
     }
 }
 
-const getUsersController = async(req, res) =>{
+export const getUsersController = async(req, res) =>{
     try{
         const loggedInUser = req.user._id
         const otherUsers = await UserModel.find({_id: {$ne: loggedInUser}}).select("-password")
@@ -33,7 +33,7 @@ const getUsersController = async(req, res) =>{
     }
 }
 
-const sendMessageController = async(req, res) =>{
+export const sendMessageController = async(req, res) =>{
     try{
         const { text } = req.body
         const receiverId = req.params.id
@@ -69,5 +69,5 @@ const sendMessageController = async(req, res) =>{
     }
 }
 
-module.exports = { getMessageController, getUsersController, sendMessageController }
+//module.exports = { getMessageController, getUsersController, sendMessageController }
 

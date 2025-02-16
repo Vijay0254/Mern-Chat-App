@@ -1,19 +1,19 @@
-const socket = require("socket.io")
-const http = require('http')
-const express = require('express')
+import { Server } from "socket.io"
+import http from 'http'
+import express from 'express'
+import dotenv from 'dotenv'
 const app = express()
-const dotenv = require('dotenv')
 dotenv.config()
 
 const server = http.createServer(app)
 
-const io = new socket.Server(server, {
+const io = new Server(server, {
     cors: {
         origin: [process.env.FRONTEND_URL]
     }
 })
 
-const getReceiverSocketId = (userId) =>{
+export const getReceiverSocketId = (userId) =>{
     return userSocketMap[userId]
 }
 
@@ -37,4 +37,4 @@ io.on("connection", (socket) =>{
     })
 })
 
-module.exports = { io, server, app, getReceiverSocketId }
+export { io, app, server }

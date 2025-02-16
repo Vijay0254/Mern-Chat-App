@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken')
+import jwt from 'jsonwebtoken'
 
 const jwtToken = (id, res) =>{
     const token = jwt.sign({id: id}, process.env.JWT_SECRET_KEY, {expiresIn: "5d"})

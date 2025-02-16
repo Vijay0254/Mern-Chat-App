@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken')
-const UserModel = require('../models/UserModel')
+import jwt from 'jsonwebtoken'
+import UserModel from '../models/UserModel'
 
 //For User
 const verifyToken = (req, res, next) =>{
@@ -28,4 +28,4 @@ const verifyToken = (req, res, next) =>{
     }
 }
 
-module.exports = verifyToken
+export default verifyToken

@@ -1,8 +1,9 @@
-const dotenv = require('dotenv')
+import dotenv from 'dotenv'
+import connectDb from './db/connectDb.js'
+import UserModel from './models/UserModel.js'
+import bcrypt from 'bcrypt'
+
 dotenv.config()
-const connectDb = require('./db/connectDb.js')
-const UserModel = require('./models/UserModel.js')
-const bcrypt = require('bcrypt')
 
 const seedUsers = [
   // Female Users

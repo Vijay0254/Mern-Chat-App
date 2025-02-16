@@ -1,10 +1,10 @@
-const UserModel = require("../models/UserModel")
-const bcrypt = require('bcrypt')
-const jwtToken = require('../utils/jwtToken')
-const cloudinary = require('cloudinary')
-const validator = require('validator')
+import UserModel from "../models/UserModel"
+import bcrypt from'bcrypt'
+import jwtToken from'../utils/jwtToken'
+import cloudinary from'cloudinary'
+import validator from'validator'
 
-const signupController = async(req, res) =>{
+export const signupController = async(req, res) =>{
     try{
         const { email, fullName, password } = req.body
 
@@ -48,7 +48,7 @@ const signupController = async(req, res) =>{
     }
 }
 
-const loginController = async(req, res) =>{
+export const loginController = async(req, res) =>{
     try{
         const { email, password } = req.body
 
@@ -77,7 +77,7 @@ const loginController = async(req, res) =>{
     }
 }
 
-const logoutController = async(req, res) =>{
+export const logoutController = async(req, res) =>{
     try{
         res.clearCookie('token')
         return res.status(200).json({message: "Logged out", success: true})
@@ -88,7 +88,7 @@ const logoutController = async(req, res) =>{
     }
 }
 
-const verifyTokenController = async(req, res) =>{
+export const verifyTokenController = async(req, res) =>{
     try{
         return res.status(200).json({user: req.user._doc, success: true})
     }
@@ -98,7 +98,7 @@ const verifyTokenController = async(req, res) =>{
     }
 }
 
-const updateProfileController = async(req, res) =>{
+export const updateProfileController = async(req, res) =>{
     try{
         const profilePic = req?.files?.profilePic?.[0]
         const userId = req.user._id
@@ -122,4 +122,4 @@ const updateProfileController = async(req, res) =>{
     }
 }
 
-module.exports = { signupController, loginController, logoutController, verifyTokenController, updateProfileController }
+//export { signupController, loginController, logoutController, verifyTokenController, updateProfileController }
