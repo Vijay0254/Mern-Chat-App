@@ -13,4 +13,4 @@ const jwtToken = (id, res) =>{
     return token
 }
 
-module.exports = jwtToken
+export default jwtToken

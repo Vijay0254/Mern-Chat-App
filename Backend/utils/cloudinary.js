@@ -14,4 +14,4 @@ async function connectCloudinary(){
     }
 }
 
-module.exports = connectCloudinary
+export default connectCloudinary
