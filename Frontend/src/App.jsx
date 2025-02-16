@@ -35,7 +35,6 @@ const App = () => {
 
   return (
     <main data-theme={theme}>
-      {console.log(onlineUser)}
       <Navbar />
       <Routes>
         <Route element={<ProtectedRoute1 />}>
